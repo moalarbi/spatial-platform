@@ -1,49 +1,71 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+/* ============================================================
+   404 NOT FOUND — Spatial Warmth Design System
+   ============================================================ */
+import { Link } from 'wouter';
+import { ArrowLeft } from 'lucide-react';
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
+    <div className="min-h-screen bg-[#0B1D26] flex items-center justify-center relative overflow-hidden">
+      {/* Background texture */}
+      <div className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(214,179,106,0.8) 1px, transparent 0)`,
+          backgroundSize: '48px 48px'
+        }}
+      />
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+      {/* Large ghost number */}
+      <div
+        className="absolute select-none pointer-events-none"
+        style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: 'clamp(200px, 40vw, 400px)',
+          fontWeight: 300,
+          color: 'rgba(214,179,106,0.06)',
+          lineHeight: 1,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        404
+      </div>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
+      <div className="relative z-10 text-center px-6 max-w-lg">
+        <div className="w-12 h-px bg-[#D6B36A] mx-auto mb-8 opacity-60" />
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
+        <p className="text-[#D6B36A] text-xs tracking-[0.25em] uppercase font-light mb-4">
+          Page Not Found
+        </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+        <h1
+          className="text-white mb-6 leading-tight"
+          style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+            fontWeight: 300,
+          }}
+        >
+          This space doesn't exist
+        </h1>
+
+        <p className="text-white/45 text-base font-light leading-relaxed mb-10">
+          The page you're looking for may have been moved, renamed, or no longer exists.
+        </p>
+
+        <Link href="/">
+          <span className="btn-primary inline-flex items-center gap-2">
+            <ArrowLeft size={16} />
+            Return Home
+          </span>
+        </Link>
+
+        <div className="mt-8 text-white/20 text-xs tracking-widest uppercase">
+          Spatial Saudi Arabia
+        </div>
+      </div>
     </div>
   );
 }

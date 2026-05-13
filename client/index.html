@@ -1,19 +1,29 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Spatial — Immersive Property Experiences</title>    
-    <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Spatial — Immersive Property Experiences | تجارب عقارية مكانية</title>
+    <meta name="description" content="The future of luxury property visualization in Saudi Arabia. Immersive spatial experiences powered by 3D Gaussian Splatting technology." />
+    <meta name="keywords" content="spatial experiences, immersive property, Saudi Arabia, real estate, 3D visualization, luxury property" />
+    <meta property="og:title" content="Spatial — Immersive Property Experiences" />
+    <meta property="og:description" content="Experience properties before you visit. Premium spatial visualization for luxury real estate in Saudi Arabia." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    THIS IS THE END OF A COMMENT BLOCK, BLOCK TO BE DELETED -->
-  </head>
 
+    <!-- Cormorant Garamond (display/editorial) + Inter (body) + IBM Plex Sans Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+      /* Critical above-fold styles */
+      body { margin: 0; background: #F5F1EA; }
+      #root { min-height: 100vh; }
+    </style>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
@@ -22,5 +32,4 @@
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
-
 </html>
